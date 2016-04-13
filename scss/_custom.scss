@@ -397,6 +397,21 @@ Padding-top is for the fixed height header of the embedded content */
 
 }
 
+// Sidebar specific media queries
+@media screen and (min-width: 40em) and (max-width: 1200px) {
+	#sidebarContainer {
+		padding-left: 1.5em;
+	}
+}
+
+@media screen and (min-width: 40em) and (max-width: 700px) {
+	#sidebarContainer {
+		padding-left: 1em;
+	}
+}
+
+//
+
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
 
@@ -419,6 +434,7 @@ Padding-top is for the fixed height header of the embedded content */
 
 /* Small */
 @media screen and (max-width: 39.9375em) {
+
 	.grid-sizer, .grid-item { 
 		width: 100%; 
 	}
