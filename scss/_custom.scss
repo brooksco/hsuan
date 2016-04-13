@@ -44,6 +44,7 @@ a {
 #mainContainer {
 	background: $grey;
 	min-height: calc(100vh - 101px);
+	z-index: 100;
 }
 
 #pageContainer {
@@ -145,6 +146,7 @@ a {
 
 	overflow-y: scroll;
 	height: 100%;
+	z-index: 10;
 }
 
 #siteTitle {
