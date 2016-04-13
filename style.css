@@ -711,6 +711,8 @@ h1, h2, h3, h4, h5 {
 
 a {
   color: #155CE6; }
+  a:visited {
+    color: #155CE6; }
 
 .aligncenter, .alignleft, .alignright {
   width: auto !important;
@@ -792,6 +794,11 @@ a {
   overflow-y: scroll;
   height: 100%;
   z-index: 10; }
+  #sidebarContainer::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */ }
 
 #siteTitle {
   font-size: 1.7em;
