@@ -1,3 +1,3 @@
 WordPress portfolio theme for Chia-Hsuan Chou.
 
-hsuan.ch
+www.hsuan.ch
