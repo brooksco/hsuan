@@ -719,6 +719,7 @@ a {
 #mainContainer {
   background: #f2f2f2;
   min-height: calc(100vh - 101px);
+  position: relative;
   z-index: 100; }
 
 #pageContainer {

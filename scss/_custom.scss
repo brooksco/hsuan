@@ -44,6 +44,7 @@ a {
 #mainContainer {
 	background: $grey;
 	min-height: calc(100vh - 101px);
+	position: relative;
 	z-index: 100;
 }
 
