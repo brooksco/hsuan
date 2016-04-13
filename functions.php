@@ -119,7 +119,7 @@ function hsuan_scripts() {
 
 	wp_enqueue_script( 'enquire', get_template_directory_uri() . '/js/enquire.min.js', array(), '1', true);
 	wp_enqueue_script( 'imagesLoaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), '1', true);
-	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '1', true );
+	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/js/stickyfill.min.js', array(), '1', true );
 	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array(), '1', true );
 	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '1', true );
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', array('jquery', 'enquire'));

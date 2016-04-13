@@ -1,22 +1,22 @@
 jQuery(document).ready(function( $ ) {
 
+	// Wrap iframes so they can be styled
 	$('iframe[src*="youtube.com"]').wrap('<div class="youtubeWrapper" />'); 
-    $('iframe[src*="vimeo.com"]').wrap('<div class="vimeoWrapper" />');
-    $('iframe[src*="instagram.com"]').wrap('<div class="instagramWrapper" />');
+	$('iframe[src*="vimeo.com"]').wrap('<div class="vimeoWrapper" />');
+	$('iframe[src*="instagram.com"]').wrap('<div class="instagramWrapper" />');
 
+    // Set isotope masonry on .grid
+    $(".grid").isotope({
+    	itemSelector: '.grid-item',
+    	percentPosition: true,
+    	masonry: {
+    		columnWidth: '.grid-sizer'
+    	}
+    });
 
-	$(".grid").isotope({
-	// set itemSelector so .grid-sizer is not used in layout
-	itemSelector: '.grid-item',
-	percentPosition: true,
-	masonry: {
-    // use element for option
-    columnWidth: '.grid-sizer'
-	}
-	});
-
+	// Layout the grid once images are loaded
 	$(".grid").imagesLoaded().progress( function() {
-  		$(".grid").isotope('layout');
+		$(".grid").isotope('layout');
 	});
 
 	// Handle isotype filtering
@@ -31,6 +31,7 @@ jQuery(document).ready(function( $ ) {
 			category = "";
 
 		} else {
+			// Otherwise...filter based on category
 			category = "." + category;
 		}
 
@@ -48,13 +49,13 @@ jQuery(document).ready(function( $ ) {
 			$(".childCategoryContainer").slideUp(200);
 			$(this).next(".childCategoryContainer").slideDown(200);
 		}
-
 		
 	});
 
-	// Sticky any title
-	$(".titleSticky").sticky({ topSpacing: 0 });
+	// Sticky title, using the position: sticky polyfill javascript
+	$(".titleContainer").Stickyfill();
 
+	// Var to keep track of if we're on a portfolio page
 	var boolActive = false;
 
 	// Go through and make active the relevant child category list
@@ -69,7 +70,6 @@ jQuery(document).ready(function( $ ) {
 				$(this).parents(".childCategoryContainer").show();
 			}
 			
-
 		} else {
 			$(this).removeClass("active");
 		}
@@ -80,9 +80,7 @@ jQuery(document).ready(function( $ ) {
 		$("#allChildCategoryContainer").show();
 	}
 
-
-
-	// Handle some text changing, like the navs
+	// Handle some text changing, like the navs, on small screen sizes
 	enquire.register("screen and (max-width: 39.9375em)", {
 
     // OPTIONAL
@@ -91,7 +89,7 @@ jQuery(document).ready(function( $ ) {
     	$(".nav-next a").text(">");
     	$(".nav-previous a").text("<");
     },      
-                                
+    
     // OPTIONAL
     // If supplied, triggered when the media query transitions 
     // *from a matched state to an unmatched state*.
@@ -99,6 +97,6 @@ jQuery(document).ready(function( $ ) {
     	$(".nav-next a").text("next >");
     	$(".nav-previous a").text("< prev");
     }
-      
+    
 });
 });

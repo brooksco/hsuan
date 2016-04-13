@@ -732,6 +732,9 @@ a {
     width: 100%; }
 
 .titleContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   margin: 2.5rem 2rem .5rem 2rem; }
 
 .entry-title {
@@ -871,6 +874,14 @@ a {
   display: block;
   text-decoration: none; }
 
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto; }
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  left: 100%; }
+
 .childCategoryContainer {
   display: none; }
 
@@ -881,18 +892,10 @@ a {
   #categoryList .childCategoryList li .active {
     color: #32b130; }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto; }
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%; }
-
 /* Responsive IFRAME Embed Encoding 
-   Adapts fixed pixel IFRAME sizes and makes them responsive. */
+Adapts fixed pixel IFRAME sizes and makes them responsive. */
 /* First, define the common wrapper elements 
-   Padding-top is for the fixed height header of the embedded content */
+Padding-top is for the fixed height header of the embedded content */
 .youtubeWrapper, .vimeoWrapper, .instagramWrapper {
   position: relative;
   padding-top: 30px;
