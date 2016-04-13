@@ -1,0 +1,521 @@
+
+// Variables
+$grey: #f2f2f2;
+$titleGrey: #4a4a4a;
+$pageGrey: #6a6a68;
+$warmGrey: #9b9b9b;
+$footerGrey: #6c6c6c;
+
+$green: #32b130;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:900);
+
+// Main
+
+body {
+	// font-family: "Adobe Garamond Pro", serif;
+	font-family: "Helvetica", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #000;
+}
+
+a {
+	color: #155CE6;
+}
+
+// Fix for 100% width images otherwise in pageContainer
+.aligncenter, .alignleft, .alignright {
+	width: auto !important;
+	margin-bottom: 1em;
+}
+
+
+#mainContainer {
+	background: $grey;
+	min-height: calc(100vh - 101px);
+}
+
+.main-navigation li {
+
+}
+
+
+
+#pageContainer {
+	padding: 1em 2em 4em 2em;
+	font-family: "Helvetica", sans-serif;
+
+	h1, h2, h3 {
+		// color: $titleGrey;
+		color: #000;
+	}
+
+	p {
+		font-size: 1em;
+		color: $pageGrey;
+		
+	}
+
+	img {
+		width: 100%;
+		// margin-bottom: .5em;
+	}
+}
+
+.titleContainer {
+	margin: 2.5rem 2rem .5rem 2rem;
+}
+
+.entry-title {
+	font-family: "Adobe Garamond Pro", serif;
+	color: #000;
+	font-size: 1.75em;
+}
+
+#portfolioTitle {
+	display: inline-block;
+}
+
+.titleSticky {
+	margin: 0;
+
+	padding: .35em 0em .25em 0em;
+	z-index: 1000;
+	background: $grey;
+	opacity: .85;
+
+
+	h1 {
+		margin: 0;
+	font-family: "Adobe Garamond Pro", serif;
+	color: #000;
+	font-size: 1.75em;
+	}
+}
+
+.post-navigation {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	float: right;
+}
+
+
+.nav-next {
+	float: none;
+	// width: auto !important;
+	text-align: right;
+	// margin-top: -2.4em;
+	margin-top: 0;
+	font-family: "Adobe Garamond Pro", serif;
+
+	a {
+		color: #000;
+		font-size: 1.5em;
+	}
+
+}
+
+.nav-previous {
+	float: none;
+	// width: auto !important;
+	text-align: left;
+	// margin-top: -2.4em;
+	margin-top: 0;
+	font-family: "Adobe Garamond Pro", serif;
+
+	a {
+		color: #000;
+		font-size: 1.5em;
+	}
+
+	display: none;
+}
+
+//
+
+// Sidebar
+
+#sidebarContainer {
+	position: fixed;
+	padding-top: 1.5em;
+	font-family: "Adobe Garamond Pro", serif;
+
+	overflow-y: scroll;
+    height: 100%;
+}
+
+#siteTitle {
+	font-size: 1.7em;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: "HiraKakuStd-W8", "Lato", serif;
+
+	a {
+		color: #000;
+
+		
+	}
+	&:hover {
+		opacity: .75;
+	}
+}
+
+#primaryMenu {
+	margin: 1.5em 0;
+
+	ul {
+		li {
+			float: none;
+
+			a {
+				color: #000;
+				font-weight: bold;
+			}
+
+			&:hover {
+				opacity: .75;
+			}
+		}
+	}
+
+}
+
+#categoryList {
+
+	li {
+		cursor: pointer;
+		
+		&:hover {
+			opacity: .75;
+		}
+	}
+}
+
+//
+
+// Index
+
+#primary {
+	padding-top: 2.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+//
+
+// Footer
+
+#footerContainer {
+	text-align: right;
+	background: $grey;
+	padding-top: 1em;
+	padding-bottom: 2em;
+	color: $footerGrey;
+	// width: 95%;
+
+	.site-info {
+		padding: 0em 2em;
+		margin: auto;
+		font-family: "Adobe Garamond Pro", serif;
+	}
+
+	hr {
+		margin-bottom: .5em;
+	}
+}
+
+//
+
+// Isotope
+
+.grid-sizer, .grid-item { 
+	width: 33%; 
+}
+
+.grid-item {
+	float: left;
+	// background: #fff;
+	padding: .5em;
+	transition: opacity 200ms;
+
+	h1, h2, h3 {
+		font-family: "Adobe Garamond Pro", serif;
+		font-weight: bold;
+		font-size: 1.25em;
+		margin: 0;
+		color: $titleGrey;
+	}
+
+	a {
+		display: block;
+		background: #fff;
+	}
+
+	p {
+		margin: 0;
+		line-height: 1.25;
+	}
+
+	.grid-content {
+		padding: .5em .75em;
+		background: #fff;
+		color: $warmGrey;
+
+		font-family: "Adobe Garamond Pro", serif;
+	}
+
+	&:hover {
+		// -webkit-filter: brightness(110%);
+		// filter: brightness(110%);
+		opacity: .75;
+	}
+}
+
+.grid-item--width2 { 
+	width: 50%; 
+}
+
+//
+
+// Menus
+
+.main-navigation {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	li {
+		float: none;
+		position: relative;
+		font-size: 1.25rem;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+}
+
+.childCategoryContainer {
+	display: none;
+
+
+}
+
+#categoryList .childCategoryList {
+	margin-left: 1em;
+
+	li {
+		a {
+			color: $pageGrey;
+		}
+
+			.active {
+		color: $green;
+	}
+	}
+
+
+}
+
+// .main-navigation ul ul {
+// 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+// 	// float: left;
+// 	position: absolute;
+// 	top: 1.5em;
+// 	left: -999em;
+// 	z-index: 99999;
+// }
+
+// .main-navigation ul ul ul {
+// 	left: -999em;
+// 	top: 0;
+// }
+
+// .main-navigation ul ul a {
+// 	width: 200px;
+// }
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+//
+
+/* Responsive IFRAME Embed Encoding 
+   Adapts fixed pixel IFRAME sizes and makes them responsive. */
+
+
+/* First, define the common wrapper elements 
+   Padding-top is for the fixed height header of the embedded content */
+
+.youtubeWrapper, .vimeoWrapper, .instagramWrapper {
+    position: relative;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+
+/* Set the padding-bottom for 16:9 aspect ratio video from YouTube & Vimeo */ 
+.youtubeWrapper, .vimeoWrapper {
+    padding-bottom: 56.25%;      
+}
+
+/* Set padding-bottom for 5:6 aspect ratio Instagram content */
+.instagramWrapper {
+  padding-bottom: 120%;
+}
+    
+/* For each content source, set the IFRAME to be top left and occupy 100% of width and height of the containing DIV wrapper */    
+.youtubeWrapper iframe,
+.youtubeWrapper object,
+.youtubeWrapper embed,
+.vimeoWrapper iframe,
+.vimeoWrapper object,
+.vimeoWrapper embed,
+.instagramWrapper iframe,
+.instagramWrapper object,
+.instagramWrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+//
+
+// Media queries
+
+// On larger screens, fix the sidebar but keep growing the main container
+@media screen and (min-width: 1200px) {
+	.row {
+		max-width: 1920px;
+		margin-left: 4rem;
+		// margin-right: 4rem;
+	}
+
+	#sidebarContainer {
+		width: 300px;
+	}
+
+	#mainContainer, #footerContainer {
+		width: calc(100% - 300px);
+	}
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+	.grid-sizer, .grid-item { 
+		width: 50%; 
+	}
+
+	#siteTitle {
+		font-size: 1.25em;
+	}
+	
+	.main-navigation li {
+		font-size: 1.1rem;
+	}
+
+	.titleContainer {
+		margin-top: 2rem;
+	}
+}
+
+/* Small */
+@media screen and (max-width: 39.9375em) {
+	.grid-sizer, .grid-item { 
+		width: 100%; 
+	}
+
+	#site-navigation {
+		li {
+			font-size: 1rem;
+		}
+	}
+
+	.titleContainer {
+		margin: 1.5rem .5rem .5rem .5rem;
+	}
+
+	.nav-next {
+		display: inline-block;
+		width: 50%;
+	}
+
+	#primary {
+		padding-top: .5em;
+    	padding-left: 0em;
+   		padding-right: 0em;
+	}
+
+	#sidebarContainer {
+		padding-top: .25em;
+		position: relative;
+	}
+
+	#siteTitle {
+		font-size: 1.5rem;
+		text-align: center;
+
+		br {
+			display: none;
+		}
+	}
+
+	#primaryMenu {
+		text-align: center;
+		margin: 0;
+		margin-bottom: 1em;
+
+		ul {
+			li {
+				display: inline-block;
+				// margin-right: 1em;
+				padding: 0 .5em;
+			}
+		}
+	}
+
+	#categoryList {
+		// text-align: center;
+		// margin-bottom: 1em;
+		display: none;
+	}
+
+	#pageContainer {
+		padding: .5em .5em 2em .5em;
+	}
+
+	.grid-content {
+		font-size: .9em;
+	}
+
+	#categoryList .childCategoryList {
+		margin-left: .5em;
+	}
+
+	.site-info {
+		font-size: .75em;
+	}
+
+	.post-navigation {
+		display: none;
+	}
+}
+
+//
