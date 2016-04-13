@@ -49,8 +49,7 @@ get_header(); ?>
 			<div class="grid-item <?php 
 					$categories = get_the_category(); 
 						foreach ($categories as $value) {
-							$name = str_replace(' ', '', $value->name);
-							echo $name;
+							echo $value->slug;
 						}
 					?>">
 					<a href="<?php the_permalink(); ?>">

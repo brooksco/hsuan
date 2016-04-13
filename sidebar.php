@@ -39,7 +39,7 @@ if (count($titleArray) > 1) {
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primaryMenu' ) ); ?>
 
 	<ul id="categoryList">
-		<li class="categoryFilter">All Works</li>
+		<li class="categoryFilter" data-slug="all-works">All Works</li>
 		<?php
 
 		$allPortfolios = new WP_Query( array(
@@ -61,12 +61,11 @@ if (count($titleArray) > 1) {
 		foreach ($categories as $value) {
 
 			if ($value->name != "Uncategorized") {
-				// Need to add a hidden <ul> that encloses the names of the portfolios that are that category
-				echo "<li class='categoryFilter'>" . $value->name . "</li>";
+				echo "<li class='categoryFilter' data-slug='" . $value->slug . "'>" . $value->name . "</li>";
 
 				$portfolios = new WP_Query( array(
 					'post_type' => 'portfolio', 
-					'category_name' => $value->name,
+					'category_name' => $value->slug,
 					'orderby' => 'menu_order',
             		'order' => 'ASC'
 					) );

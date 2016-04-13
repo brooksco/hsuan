@@ -21,18 +21,17 @@ jQuery(document).ready(function( $ ) {
 
 	// Handle isotype filtering
 	$(".categoryFilter").on("click", function() {
-		// Get the category
-		var category = $(this).text();
-		// Strip whitespace
-		category = category.replace(/\s+/g, '');
+		// Get the category slug
+		var category = "";
+		var categorySlug = $(this).data("slug");
 
 		// If it's all, set the string to empty
-		if (category === "AllWorks") {
+		if (categorySlug === "all-works") {
 			category = "";
 
 		} else {
 			// Otherwise...filter based on category
-			category = "." + category;
+			category = "." + categorySlug;
 		}
 
 		// Filter the isotope grid
@@ -40,9 +39,8 @@ jQuery(document).ready(function( $ ) {
 			filter: category
 		});
 
-		// Do some annoying grabs to figure out if the filter we clicked on already has it's child list showing, in which case we do nothing
-		category = $(this).text();
-		var selector = "#categoryList li:contains('" + category + "')";
+		// Figure out if the filter we clicked on already has it's child list showing, in which case we do nothing
+		var selector = "#categoryList li:contains('" + categorySlug + "')";
 
 		// Show child list in sidebar, hide any others
 		if ($(selector).next(".childCategoryContainer").is(":visible") == false) { 
@@ -75,10 +73,11 @@ jQuery(document).ready(function( $ ) {
 		}
 	});
 
+	// Turns out we don't want this
 	// If no page is active, we're on the homepage or some other page where we want to show all the projects
-	if (boolActive == false) {
-		$("#allChildCategoryContainer").show();
-	}
+	// if (boolActive == false) {
+		// $("#allChildCategoryContainer").show();
+	// }
 
 	// Handle some text changing, like the navs, on small screen sizes
 	enquire.register("screen and (max-width: 39.9375em)", {
@@ -89,7 +88,7 @@ jQuery(document).ready(function( $ ) {
     	$(".nav-next a").text(">");
     	$(".nav-previous a").text("<");
     },      
-    
+
     // OPTIONAL
     // If supplied, triggered when the media query transitions 
     // *from a matched state to an unmatched state*.
@@ -97,6 +96,6 @@ jQuery(document).ready(function( $ ) {
     	$(".nav-next a").text("next >");
     	$(".nav-previous a").text("< prev");
     }
-    
+
 });
 });
