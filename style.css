@@ -713,6 +713,9 @@ a {
   color: #4A4A4A; }
   a:visited {
     color: #4A4A4A; }
+  a:hover {
+    color: #4A4A4A;
+    opacity: .75; }
 
 .aligncenter, .alignleft, .alignright {
   width: auto !important;
