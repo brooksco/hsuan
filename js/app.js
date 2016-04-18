@@ -55,6 +55,8 @@ jQuery(document).ready(function( $ ) {
 
 	// Var to keep track of if we're on a portfolio page
 	var boolActive = false;
+	// Var to keep track of if we're already expanded a list with the portfolio (don't expand more than one)
+	var boolFirstActive = false;
 
 	// Go through and make active the relevant child category list
 	$(".childCategoryList a").each(function() {
@@ -64,8 +66,10 @@ jQuery(document).ready(function( $ ) {
 			boolActive = true;
 
 			// If we're on a subpage we don't want to show the all category section
-			if ( ! $(this).hasClass("allCategoryA")) {
+			if ( (! $(this).hasClass("allCategoryA")) && (boolFirstActive == false) ) {
 				$(this).parents(".childCategoryContainer").show();
+
+				boolFirstActive = true;
 			}
 			
 		} else {
